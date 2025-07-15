@@ -1,4 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
+import Placeholder from "@tiptap/extension-placeholder";
+import { EditorContent, useEditor } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
 
 const SAMPLE_SCRIPT = `# ExampleCo Home Solutions – Sample Call Script
 
@@ -56,16 +59,20 @@ End with:
 <% function xyz98765-wxyz-4321-lmno-pqrstuvwxyza %>`;
 
 export function Editor() {
+  const editor = useEditor({
+    extensions: [
+      StarterKit,
+      Placeholder.configure({
+        placeholder: "Start writing your script...",
+      }),
+    ],
+    content: SAMPLE_SCRIPT,
+  });
+
   return (
     <Card className="rounded-lg shadow-lg">
       <CardContent className="p-6">
-        <div
-          contentEditable
-          className="min-h-[400px] w-full outline-none prose prose-sm max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-strong:font-semibold prose-em:text-gray-700 prose-em:italic prose-ul:list-disc prose-ul:pl-4 prose-ol:list-decimal prose-ol:pl-4 prose-li:text-gray-700 prose-hr:border-gray-200"
-          role="textbox"
-          aria-label="Prompt editor"
-          dangerouslySetInnerHTML={{ __html: SAMPLE_SCRIPT }}
-        />
+        <EditorContent editor={editor} />
       </CardContent>
     </Card>
   );
