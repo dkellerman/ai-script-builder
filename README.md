@@ -13,61 +13,13 @@ We're excited to see how you approach a complex editing interface involving mark
 Consider this SAMPLE_SCRIPT in markdown format:
 
 ```markdown
-# ExampleCo Home Solutions – Sample Call Script
+# Simple Color Preference Script
 
-You're a customer service representative speaking on the phone.
+## You are assisting a client.
 
----
-
-## Steps:
-
-1. Ask for **first and last name**.
-
-2. Ask for **full property address**.
-
-3. Confirm the address back, saying:
-
-   - Street numbers and ZIP code individually.
-   - e.g., "401st Street" → _"four hundred first street"_
-
-4. Ask:  
-   _"And that is the home you own and live at?"_
-
-5. Ask:  
-   _"And what type of home is it — single family, condo, townhome, mobile, or rental?"_
-
-6. Ask:  
-   _"Great! We also ask to meet with all owners of the property. Who would that be?"_
-
-7. Say:  
-   _"This will be a full replacement including frame and installation. We don't perform repairs or glass-only replacements."_
-
-8. Ask how many **[units]** they want replaced (e.g., windows or doors).
-
-9. Ask what issues they're experiencing with those **[units]**.
-
-10. Say:  
-    _"A Project Specialist will inspect, measure, and provide a quote valid for 12 months. Does that sound helpful?"_
-
-11. Ask:  
-    _"We ask that you set aside about 90 minutes for the visit. Fair enough?"_
-
-12. Ask for **best email address**.
-
-13. Ask:  
-    _"Would daytime or evening work better for your schedule?"_
-
-14. Offer appointment based on their preference (e.g., 2 P M or 6 P M).
-
-15. Then:  
-    <% abc12345-def6-7890-ghij-klmnopqrstuv %>
-
----
-
-## If Caller Is Not Interested:
-
-End with:  
-<% xyz98765-wxyz-4321-lmno-pqrstuvwxyza %>
+1. Ask: **What is your favorite color?**
+2. As soon as the user responds, <% function xyz98765-wxyz-4321-lmno-pqrstuvwxyza %>
+3. If the response is **red**, <% function abc12345-def6-7890-ghij-klmnopqrstuv %>
 ```
 
 This markdown format works perfectly for LLMs - they understand the structure, can parse the function placeholders, and generate appropriate responses. However, our users don't know markdown syntax. They need a visual, intuitive editor instead
