@@ -117,4 +117,26 @@
   body {
     @apply bg-background text-foreground;
   }
+  .ProseMirror {
+    white-space: pre-wrap;
+  }
+}
+
+@layer components {
+  .editor-content {
+    h1 { @apply mt-6 mb-3 text-2xl font-semibold; }
+    h2 { @apply mt-5 mb-3 text-xl font-semibold; }
+    h3 { @apply mt-4 mb-2 text-lg font-semibold; }
+    h4 { @apply mt-3 mb-2 text-base font-semibold; }
+    h5 { @apply mt-2 mb-1 text-sm font-semibold; }
+    h6 { @apply mt-1 mb-0 text-sm font-semibold; }
+    ul { @apply my-3 pl-6 list-disc; }
+    ol { @apply my-3 pl-6 list-decimal; }
+    a { @apply text-blue-600 underline; }
+    strong { @apply font-semibold; }
+    code { @apply bg-gray-100 rounded px-1 font-mono text-sm; }
+    pre { @apply bg-gray-100 rounded p-3 overflow-x-auto text-sm; }
+    blockquote { @apply my-3 border-l-4 border-gray-300 pl-3 text-gray-600 italic; }
+    hr { @apply my-3 border-gray-200; }
+  }
 }

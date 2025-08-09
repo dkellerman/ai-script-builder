@@ -7,6 +7,9 @@ export const availableFunctions = {
   calendar: "Functions.Calendar",
 };
 
+type FunctionType =
+  (typeof availableFunctions)[keyof typeof availableFunctions];
+
 // FunctionSpec: The contract for a function specification.
 // This mimics a response from a database or API that fetches the available function specs for a given user or context.
 // Each function spec 'id' is unique upon creation and should be treated as a unique identifier for that function instance.
@@ -14,7 +17,7 @@ export const availableFunctions = {
 export interface FunctionSpec {
   id: string;
   description: string;
-  function_internal_id: string;
+  function_internal_id: FunctionType;
 }
 
 export const functionSpecs: FunctionSpec[] = [
